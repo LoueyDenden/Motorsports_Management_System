@@ -1,0 +1,71 @@
+syntax = "proto3";
+package motogp;
+
+// Definition of the MotoGPRider message
+message MotoGPRider {
+  string id = 1;
+  string name = 2;
+  string team = 3;
+  // Add other data fields for riders as needed
+}
+
+// Definition of the request and response messages for the GetRider method
+message GetRiderRequest {
+  string id = 1;
+}
+
+message GetRiderResponse {
+  MotoGPRider rider = 1;
+}
+
+// Definition of the request and response messages for the SearchRiders method
+message SearchRidersRequest {
+  string query = 1;
+}
+
+message SearchRidersResponse {
+  repeated MotoGPRider riders = 1;
+}
+
+// Definition of the request and response messages for the AddRider method
+message AddRiderRequest {
+  string id = 1;
+  string name = 2;
+  string team = 3;
+}
+
+message AddRiderResponse {
+  MotoGPRider rider = 1;
+}
+
+// Definition of the request message for the DeleteRider method
+message DeleteRiderRequest {
+  string id = 1;
+}
+
+// Definition of the response message for the DeleteRider method
+message DeleteRiderResponse {
+  // You can include any response data if needed
+}
+
+// Definition of the request message for the UpdateRider method
+message UpdateRiderRequest {
+  string id = 1;
+  string name = 2;
+  string team = 3;
+}
+
+// Definition of the response message for the UpdateRider method
+message UpdateRiderResponse {
+  MotoGPRider rider = 1;
+}
+
+// Definition of the MotoGPService service
+service MotoGPService {
+  rpc GetRider(GetRiderRequest) returns (GetRiderResponse);
+  rpc SearchRiders(SearchRidersRequest) returns (SearchRidersResponse);
+  rpc AddRider(AddRiderRequest) returns (AddRiderResponse);
+  rpc DeleteRider(DeleteRiderRequest) returns (DeleteRiderResponse);
+  rpc UpdateRider(UpdateRiderRequest) returns (UpdateRiderResponse);
+  // Add other methods as needed
+}

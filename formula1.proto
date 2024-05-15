@@ -1,0 +1,71 @@
+syntax = "proto3";
+package formula1;
+
+// Definition of the Formula1Driver message
+message Formula1Driver {
+  string id = 1;
+  string name = 2;
+  string team = 3;
+  // Add other data fields for drivers as needed
+}
+
+// Definition of the request and response messages for the GetDriver method
+message GetDriverRequest {
+  string id = 1;
+}
+
+message GetDriverResponse {
+  Formula1Driver driver = 1;
+}
+
+// Definition of the request and response messages for the SearchDrivers method
+message SearchDriversRequest {
+  string query = 1;
+}
+
+message SearchDriversResponse {
+  repeated Formula1Driver drivers = 1;
+}
+
+// Definition of the request and response messages for the AddDriver method
+message AddDriverRequest {
+  string id = 1;
+  string name = 2;
+  string team = 3;
+}
+
+message AddDriverResponse {
+  Formula1Driver driver = 1;
+}
+
+// Definition of the DeleteDriverRequest message
+message DeleteDriverRequest {
+  string id = 1;
+}
+
+// Definition of the DeleteDriverResponse message
+message DeleteDriverResponse {
+  // You can include any response data if needed
+}
+
+// Definition of the UpdateDriverRequest message
+message UpdateDriverRequest {
+  string id = 1;
+  string name = 2;
+  string team = 3;
+}
+
+// Definition of the UpdateDriverResponse message
+message UpdateDriverResponse {
+  Formula1Driver driver = 1;
+}
+
+// Definition of the Formula1Service service
+service Formula1Service {
+  rpc GetDriver(GetDriverRequest) returns (GetDriverResponse);
+  rpc SearchDrivers(SearchDriversRequest) returns (SearchDriversResponse);
+  rpc AddDriver(AddDriverRequest) returns (AddDriverResponse);
+  rpc DeleteDriver(DeleteDriverRequest) returns (DeleteDriverResponse);
+  rpc UpdateDriver(UpdateDriverRequest) returns (UpdateDriverResponse);
+  // Add other methods as needed
+}
