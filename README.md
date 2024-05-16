@@ -99,5 +99,22 @@ You can test the REST endpoints using [Postman](https://www.postman.com/). Impor
 Apollo Server
 For testing GraphQL endpoints, you can use Apollo Server. Navigate to the GraphQL endpoint (http://localhost:PORT) in your browser or use a tool like GraphiQL to explore and test GraphQL queries and mutations.
 
+### Formula 1 Endpoints
+
+- **GET** `/f1`: Get all drivers.
+- **GET** `/f1/:id`: Get driver by ID.
+- **POST** `/f1/add`: Add new driver.
+- **PUT** `/f1/:id`: Update driver.
+- **DELETE** `/f1/:id`: Delete driver.
+
+### MotoGP Endpoints
+
+- **GET** `/motogp`: Get all riders.
+- **GET** `/motogp/:id`: Get rider by ID.
+- **POST** `/motogp/add`: Add new rider.
+- **PUT** `/motogp/:id`: Update rider.
+- **DELETE** `/motogp/:id`: Delete rider.
+
+
 ## Contribution
 This project was developed and maintained by Louey Denden.
