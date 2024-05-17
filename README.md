@@ -64,7 +64,7 @@ Navigate to the root directory and run the following command to install the requ
 npm install
 ```
 
-3. Install Kafka
+### 3. Install Kafka
 Download and install Kafka from the [official website](https://kafka.apache.org/downloads). Follow the installation instructions provided.
 
 ### 4. Start Kafka Zookeeper and Server
